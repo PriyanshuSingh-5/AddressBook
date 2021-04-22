@@ -8,7 +8,7 @@ namespace AddressBook
         {
             Console.WriteLine("-------------Welcome to Address Book Program------------ ");
             AddressDetails addressBook = new AddressDetails();
-            int Choice;
+            int Choice=Convert.ToInt32(Console.ReadLine());
             do
             {
 
@@ -29,7 +29,7 @@ namespace AddressBook
             Console.WriteLine("Enter Phone Number :");
             long phoneNumber = Convert.ToInt64(Console.ReadLine());
             addressBook.AddContact(firstName, lastName, address, city, state, email, zip, phoneNumber);
-                addressBook.AddContact(firstName, lastName, address, city, state, email, zip, phoneNumber);
+                
                 
                 switch (Choice)
                 {
