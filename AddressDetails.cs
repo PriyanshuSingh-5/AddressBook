@@ -97,7 +97,21 @@ namespace AddressBook
                         Console.WriteLine("\nIt Is Not Found.\n");
                     }
                 }
+
+        public void AddContact(ContactDetails contactObj)
+        {
+            bool keyExists = addressBook.ContainsKey(contactObj);
+            if (keyExists)
+            {
+                Console.WriteLine("O Sorry!already a contact exist,Please try another one", contactObj);
+            }
+            else
+            {
+                this.ContactDetails.Add(contactObj);
             }
         }
-   
+    }
+
+}
+
 
