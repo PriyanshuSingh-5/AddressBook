@@ -4,9 +4,44 @@ namespace AddressBook
 {
     class Program
     {
+        public static Dictionary<string, AddressBook2> MapAddressBook = new Dictionary<string, AddressBook2>();
         static void Main(string[] args)
         {
-            Console.WriteLine("-------------Welcome to Address Book Program------------ ");
+
+            Console.WriteLine("Welcome to Address book using console Apllication");
+
+            int choice;
+            string name;
+            do
+            {
+                Console.WriteLine("\nOptions : \n 1.Add New Address Book \n 2.Work On Existing Address Book \n 3.Exit");
+                choice = Convert.ToInt32(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        Console.WriteLine("Enter the Name of Address Book");
+                        name = Console.ReadLine();
+                        MapAddressBook.Add(name, new AddressBook2());
+                        break;
+                    case 2:
+                        Console.WriteLine("Enter the Name of Address Book in which you want to Work On");
+                        name = Console.ReadLine();
+                        AddressBook2 addressBook = MapAddressBook[name];
+                        FillAddressBook(addressBook);
+                        break;
+                    case 3:
+                        Console.WriteLine("====Thankyou!!! Have A Nice Day(*_*)===== ");
+                        break;
+                    default:
+                        Console.WriteLine("sorry worng input");
+                        break;
+                }
+            } while (choice != 3);
+        }
+            public static void FillAddressBook(AddressBook2 addressBook)
+            {
+                
+             Console.WriteLine("-------------Welcome to Address Book Program------------ ");
             AddressDetails addressBook = new AddressDetails();
             int Choice=Convert.ToInt32(Console.ReadLine());
             do
